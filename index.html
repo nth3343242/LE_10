@@ -304,8 +304,6 @@ function hold(id,val){
   ['pointerup','pointercancel','lostpointercapture'].forEach(ev=>el.addEventListener(ev,()=>{if(move===val)move=0}));
 }
 hold('left',-1);hold('right',1);document.getElementById('shoot').addEventListener('pointerdown',e=>{e.preventDefault();fire()});
-c.addEventListener('pointermove',e=>{if(running&&e.pointerType!=='mouse'&&e.buttons){const r=c.getBoundingClientRect();player.x=Math.max(player.r+4,Math.min(W-player.r-4,e.clientX-r.left));}});
-c.addEventListener('pointerdown',e=>{if(running&&e.pointerType!=='mouse'){const r=c.getBoundingClientRect();player.x=Math.max(player.r+4,Math.min(W-player.r-4,e.clientX-r.left));}});
 })();
 </script>
 </body></html>
